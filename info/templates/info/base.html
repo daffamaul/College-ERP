@@ -53,7 +53,10 @@
                 {% endif %}
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
+              <form method="post" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button type="submit">logout</button>
+              </form>
             </li>
           </ul>
         </div>
